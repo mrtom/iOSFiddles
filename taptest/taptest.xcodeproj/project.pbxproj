@@ -19,6 +19,9 @@
 		456CA45A1621AC8500A7564F /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456CA4581621AC8500A7564F /* MainStoryboard_iPhone.storyboard */; };
 		456CA45D1621AC8500A7564F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 456CA45B1621AC8500A7564F /* MainStoryboard_iPad.storyboard */; };
 		456CA4601621AC8500A7564F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 456CA45F1621AC8500A7564F /* ViewController.m */; };
+		45A15B4F162C4B6B000D92B7 /* TapFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A15B4E162C4B6B000D92B7 /* TapFilter.m */; };
+		45A15B53162C55B7000D92B7 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A15B52162C55B7000D92B7 /* GraphView.m */; };
+		45A15B55162C593B000D92B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A15B54162C593B000D92B7 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,18 @@
 		456CA45C1621AC8500A7564F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		456CA45E1621AC8500A7564F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		456CA45F1621AC8500A7564F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		45A15B4D162C4B6B000D92B7 /* TapFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapFilter.h; sourceTree = "<group>"; };
+		45A15B4E162C4B6B000D92B7 /* TapFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapFilter.m; sourceTree = "<group>"; };
+		45A15B51162C55B7000D92B7 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		45A15B52162C55B7000D92B7 /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
+		45A15B54162C593B000D92B7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		45A15B56162C5ECC000D92B7 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		45A15B57162C5ECC000D92B7 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		45A15B58162C5ECC000D92B7 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		45A15B59162C5ECC000D92B7 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		45A15B5A162C5ECC000D92B7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		45A15B5B162C5ECC000D92B7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		45A15B5C162C5ECC000D92B7 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A15B55162C593B000D92B7 /* QuartzCore.framework in Frameworks */,
 				456CA4411621AC8500A7564F /* UIKit.framework in Frameworks */,
 				456CA4431621AC8500A7564F /* Foundation.framework in Frameworks */,
 				456CA4451621AC8500A7564F /* CoreGraphics.framework in Frameworks */,
@@ -58,6 +74,7 @@
 		456CA4311621AC8500A7564F = {
 			isa = PBXGroup;
 			children = (
+				45A15B54162C593B000D92B7 /* QuartzCore.framework */,
 				456CA4461621AC8500A7564F /* taptest */,
 				456CA43F1621AC8500A7564F /* Frameworks */,
 				456CA43D1621AC8500A7564F /* Products */,
@@ -85,6 +102,10 @@
 		456CA4461621AC8500A7564F /* taptest */ = {
 			isa = PBXGroup;
 			children = (
+				45A15B51162C55B7000D92B7 /* GraphView.h */,
+				45A15B52162C55B7000D92B7 /* GraphView.m */,
+				45A15B4D162C4B6B000D92B7 /* TapFilter.h */,
+				45A15B4E162C4B6B000D92B7 /* TapFilter.m */,
 				456CA44F1621AC8500A7564F /* AppDelegate.h */,
 				456CA4501621AC8500A7564F /* AppDelegate.m */,
 				456CA4581621AC8500A7564F /* MainStoryboard_iPhone.storyboard */,
@@ -99,6 +120,13 @@
 		456CA4471621AC8500A7564F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				45A15B56162C5ECC000D92B7 /* Icon-72.png */,
+				45A15B57162C5ECC000D92B7 /* Icon-Small-50.png */,
+				45A15B58162C5ECC000D92B7 /* Icon-Small.png */,
+				45A15B59162C5ECC000D92B7 /* Icon-Small@2x.png */,
+				45A15B5A162C5ECC000D92B7 /* Icon.png */,
+				45A15B5B162C5ECC000D92B7 /* Icon@2x.png */,
+				45A15B5C162C5ECC000D92B7 /* iTunesArtwork */,
 				456CA4481621AC8500A7564F /* taptest-Info.plist */,
 				456CA4491621AC8500A7564F /* InfoPlist.strings */,
 				456CA44C1621AC8500A7564F /* main.m */,
@@ -180,6 +208,8 @@
 				456CA44D1621AC8500A7564F /* main.m in Sources */,
 				456CA4511621AC8500A7564F /* AppDelegate.m in Sources */,
 				456CA4601621AC8500A7564F /* ViewController.m in Sources */,
+				45A15B4F162C4B6B000D92B7 /* TapFilter.m in Sources */,
+				45A15B53162C55B7000D92B7 /* GraphView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +335,7 @@
 				456CA4651621AC8500A7564F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

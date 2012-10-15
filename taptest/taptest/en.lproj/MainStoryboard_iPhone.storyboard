@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
@@ -12,60 +12,109 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jc-wm-yPq">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Jc-wm-yPq">
+                                <rect key="frame" x="20" y="0.0" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHd-a0-Ji3">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oHd-a0-Ji3">
+                                <rect key="frame" x="20" y="29" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNL-4r-2al">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hNL-4r-2al">
+                                <rect key="frame" x="20" y="58" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xdR-GL-QoL"/>
-                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qkj-0U-qyL"/>
-                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ikW-VV-nBm"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="xdR-GL-QoL">
+                                <rect key="frame" x="20" y="92" width="280" height="9"/>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="qkj-0U-qyL">
+                                <rect key="frame" x="20" y="109" width="280" height="9"/>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="ikW-VV-nBm">
+                                <rect key="frame" x="20" y="126" width="280" height="9"/>
+                            </progressView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ix1-qX-8Uy">
+                                <rect key="frame" x="0.0" y="504" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="btE-Fi-pMw"/>
+                                    <barButtonItem title="Mute" width="87" id="7yQ-9c-2xq">
+                                        <connections>
+                                            <action selector="toggleMute:" destination="2" id="DU9-UC-Bbj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="QbL-Bj-Ghc"/>
+                                </items>
+                            </toolbar>
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="0OL-kn-cfj" customClass="GraphView">
+                                <rect key="frame" x="0.0" y="169" width="320" height="112"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.14652973377243908" blue="0.39106075197219964" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="6Q2-vE-3Iy" customClass="GraphView">
+                                <rect key="frame" x="0.0" y="312" width="320" height="112"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.14652973377243908" blue="0.39106075197219964" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Raw output" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HlH-sH-fgq">
+                                <rect key="frame" x="20" y="143" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Filtered Output" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MMQ-QA-jMJ">
+                                <rect key="frame" x="20" y="289" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="hNL-4r-2al" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="303-zV-0HC"/>
-                            <constraint firstItem="4Jc-wm-yPq" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="3xl-R1-WK5"/>
-                            <constraint firstItem="xdR-GL-QoL" firstAttribute="top" secondItem="3" secondAttribute="top" constant="174" id="NVh-O5-4rf"/>
-                            <constraint firstAttribute="trailing" secondItem="xdR-GL-QoL" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Oav-XX-li7"/>
-                            <constraint firstItem="qkj-0U-qyL" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UcF-xl-DdX"/>
-                            <constraint firstItem="ikW-VV-nBm" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Uuj-Fr-91L"/>
-                            <constraint firstAttribute="trailing" secondItem="ikW-VV-nBm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="VzC-Nj-DhN"/>
-                            <constraint firstAttribute="trailing" secondItem="qkj-0U-qyL" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="XHE-LG-SYW"/>
-                            <constraint firstItem="oHd-a0-Ji3" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="aqz-Ci-zpW"/>
-                            <constraint firstAttribute="trailing" secondItem="hNL-4r-2al" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="asO-ar-mIg"/>
-                            <constraint firstItem="4Jc-wm-yPq" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dvQ-2v-cqI"/>
-                            <constraint firstAttribute="trailing" secondItem="4Jc-wm-yPq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="gCK-vB-J2h"/>
-                            <constraint firstItem="oHd-a0-Ji3" firstAttribute="top" secondItem="4Jc-wm-yPq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="iPY-Rx-e0c"/>
-                            <constraint firstItem="ikW-VV-nBm" firstAttribute="top" secondItem="qkj-0U-qyL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="njX-se-shM"/>
-                            <constraint firstItem="hNL-4r-2al" firstAttribute="top" secondItem="oHd-a0-Ji3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="sSE-oh-Lj5"/>
-                            <constraint firstItem="qkj-0U-qyL" firstAttribute="top" secondItem="xdR-GL-QoL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="w09-qa-m94"/>
-                            <constraint firstAttribute="trailing" secondItem="oHd-a0-Ji3" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wEt-Xr-0eZ"/>
-                            <constraint firstItem="xdR-GL-QoL" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xLR-oU-KGZ"/>
-                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="filtered" destination="6Q2-vE-3Iy" id="7u6-iS-tSV"/>
                         <outlet property="labelX" destination="4Jc-wm-yPq" id="b5H-Io-lLc"/>
                         <outlet property="labelY" destination="oHd-a0-Ji3" id="hdx-wK-hN2"/>
                         <outlet property="labelZ" destination="hNL-4r-2al" id="Xn6-9Q-kcD"/>
+                        <outlet property="mute" destination="7yQ-9c-2xq" id="Af6-FY-e9T"/>
                         <outlet property="progressX" destination="xdR-GL-QoL" id="gTi-ye-EMJ"/>
                         <outlet property="progressY" destination="qkj-0U-qyL" id="sLn-VH-orU"/>
                         <outlet property="progressZ" destination="ikW-VV-nBm" id="ejF-7R-fF8"/>
+                        <outlet property="unfiltered" destination="0OL-kn-cfj" id="1X6-D4-PVC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="GraphView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphView.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="toggleMute:"/>
+                <relationship kind="outlet" name="filtered" candidateClass="GraphView"/>
+                <relationship kind="outlet" name="labelX" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelY" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelZ" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mute" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="progressX" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="progressY" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="progressZ" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="unfiltered" candidateClass="GraphView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
