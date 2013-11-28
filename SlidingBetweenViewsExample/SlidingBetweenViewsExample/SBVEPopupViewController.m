@@ -33,6 +33,7 @@
 - (void)loadView
 {
   self.view = [[SBVEPopupView alloc] init];
+  [(SBVEPopupView *)self.view setMyVC:self];
 }
 
 - (void)viewDidLoad
@@ -95,6 +96,11 @@
   // Dispose of any resources that can be recreated.
 }
 
+- (void)viewTouchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
+{
+  CGPoint pt = [[touches anyObject] locationInView: self.view];
+  _movableView.center = CGPointMake(pt.x, pt.y);
+}
 
 
 @end

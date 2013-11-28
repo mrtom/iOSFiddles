@@ -38,10 +38,10 @@
   [self.view addSubview:_popup.view];
   
   [_button1 setDelegate:self];
-  [_button1 setPopupView:(SBVEPopupView *)_popup.view];
+  [_button1 setPopupVC:_popup];
   
   [_button2 setDelegate:self];
-  [_button2 setPopupView:(SBVEPopupView *)_popup.view];
+  [_button2 setPopupVC:_popup];
 }
 
 - (void)setupLayoutConstraints
@@ -67,7 +67,7 @@
 
 - (void)showPopupWithTouches:(NSSet *)touches forEvent:(UIEvent *)event
 {
-  // FIXME (tomelliott) Adding the popup to the view here breaks touches being sent to the popup view :/
+  // XXX (tomelliott) Adding the popup to the view here breaks touches being sent to the popup view :/ But it kinda mings to have to just change the opacity
   [_popup.view setAlpha:1.0f];
   [_popup setupLayoutConstraints];
 }

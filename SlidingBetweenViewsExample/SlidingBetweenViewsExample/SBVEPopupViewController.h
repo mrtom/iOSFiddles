@@ -12,4 +12,6 @@
 
 - (void)setupLayoutConstraints;
 
+- (void)viewTouchesMoved:(NSSet*)touches withEvent:(UIEvent*)event;
+
 @end

@@ -9,6 +9,7 @@
 #import "SBVEPopupView.h"
 
 #import "SBVEBarButtonItem.h"
+#import "SBVEPopupViewController.h"
 
 @implementation SBVEPopupView
 
@@ -48,6 +49,7 @@
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
   NSLog(@"Touches moved on Popup View");
+  [_myVC viewTouchesMoved:touches withEvent:event];
 }
 
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event

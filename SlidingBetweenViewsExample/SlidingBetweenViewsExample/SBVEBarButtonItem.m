@@ -8,6 +8,8 @@
 
 #import "SBVEBarButtonItem.h"
 
+#import "SBVEPopupView.h"
+
 @implementation SBVEBarButtonItem
 
 - (id)initWithFrame:(CGRect)frame
@@ -49,8 +51,8 @@
   NSLog(@"Calling hit test within the Bar Button Item");
   
   if ([super hitTest:point withEvent:event]) {
-    [_popupView setActiveBarButtonItem:self];
-    return _popupView;
+    [(SBVEPopupView *)_popupVC.view setActiveBarButtonItem:self];
+    return _popupVC.view;
   }
   
   return nil;

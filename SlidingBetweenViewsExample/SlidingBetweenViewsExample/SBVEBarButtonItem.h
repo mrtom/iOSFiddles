@@ -10,12 +10,12 @@
 
 #import "SBVEBarButtonItemDelegate.h"
 
-#import "SBVEPopupView.h"
+#import "SBVEPopupViewController.h"
 
 @interface SBVEBarButtonItem : UIView
 
 @property (nonatomic, strong) id<SBVEBarButtonItemDelegate> delegate;
-@property (nonatomic, strong) SBVEPopupView *popupView;
+@property (nonatomic, strong) SBVEPopupViewController *popupVC;
 
 - (void)showPopupWithTouches:(NSSet *)touches forEvent:(UIEvent *)event;
 - (void)hidePopupWithTouches:(NSSet *)touches forEvent:(UIEvent *)event;
