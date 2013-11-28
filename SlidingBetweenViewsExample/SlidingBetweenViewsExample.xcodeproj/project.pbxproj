@@ -24,6 +24,8 @@
 		4597FF231846B87A000F8764 /* SBVEButtonBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4597FF211846B87A000F8764 /* SBVEButtonBarViewController.m */; };
 		4597FF241846B87A000F8764 /* SBVEButtonBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4597FF221846B87A000F8764 /* SBVEButtonBarViewController.xib */; };
 		4597FF271846BADA000F8764 /* SBVEPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4597FF261846BADA000F8764 /* SBVEPopupViewController.m */; };
+		4597FF2A1847461F000F8764 /* SBVEBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4597FF291847461F000F8764 /* SBVEBarButtonItem.m */; };
+		4597FF2E18474CD3000F8764 /* SBVEPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4597FF2D18474CD3000F8764 /* SBVEPopupView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,11 @@
 		4597FF221846B87A000F8764 /* SBVEButtonBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBVEButtonBarViewController.xib; sourceTree = "<group>"; };
 		4597FF251846BADA000F8764 /* SBVEPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBVEPopupViewController.h; sourceTree = "<group>"; };
 		4597FF261846BADA000F8764 /* SBVEPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBVEPopupViewController.m; sourceTree = "<group>"; };
+		4597FF281847461F000F8764 /* SBVEBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBVEBarButtonItem.h; sourceTree = "<group>"; };
+		4597FF291847461F000F8764 /* SBVEBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBVEBarButtonItem.m; sourceTree = "<group>"; };
+		4597FF2B18474845000F8764 /* SBVEBarButtonItemDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBVEBarButtonItemDelegate.h; sourceTree = "<group>"; };
+		4597FF2C18474CD3000F8764 /* SBVEPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBVEPopupView.h; sourceTree = "<group>"; };
+		4597FF2D18474CD3000F8764 /* SBVEPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBVEPopupView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,16 +127,11 @@
 		4597FEF11846B82E000F8764 /* SlidingBetweenViewsExample */ = {
 			isa = PBXGroup;
 			children = (
+				4597FF311847652E000F8764 /* ViewControllers */,
+				4597FF3018476525000F8764 /* Views */,
 				4597FEFA1846B82E000F8764 /* SBVEAppDelegate.h */,
 				4597FEFB1846B82E000F8764 /* SBVEAppDelegate.m */,
 				4597FEFD1846B82E000F8764 /* Main.storyboard */,
-				4597FF001846B82E000F8764 /* SBVEViewController.h */,
-				4597FF011846B82E000F8764 /* SBVEViewController.m */,
-				4597FF201846B87A000F8764 /* SBVEButtonBarViewController.h */,
-				4597FF211846B87A000F8764 /* SBVEButtonBarViewController.m */,
-				4597FF221846B87A000F8764 /* SBVEButtonBarViewController.xib */,
-				4597FF251846BADA000F8764 /* SBVEPopupViewController.h */,
-				4597FF261846BADA000F8764 /* SBVEPopupViewController.m */,
 				4597FF031846B82E000F8764 /* Images.xcassets */,
 				4597FEF21846B82E000F8764 /* Supporting Files */,
 			);
@@ -163,6 +165,32 @@
 				4597FF131846B82E000F8764 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4597FF3018476525000F8764 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4597FF2B18474845000F8764 /* SBVEBarButtonItemDelegate.h */,
+				4597FF281847461F000F8764 /* SBVEBarButtonItem.h */,
+				4597FF291847461F000F8764 /* SBVEBarButtonItem.m */,
+				4597FF2C18474CD3000F8764 /* SBVEPopupView.h */,
+				4597FF2D18474CD3000F8764 /* SBVEPopupView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4597FF311847652E000F8764 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4597FF001846B82E000F8764 /* SBVEViewController.h */,
+				4597FF011846B82E000F8764 /* SBVEViewController.m */,
+				4597FF201846B87A000F8764 /* SBVEButtonBarViewController.h */,
+				4597FF211846B87A000F8764 /* SBVEButtonBarViewController.m */,
+				4597FF221846B87A000F8764 /* SBVEButtonBarViewController.xib */,
+				4597FF251846BADA000F8764 /* SBVEPopupViewController.h */,
+				4597FF261846BADA000F8764 /* SBVEPopupViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +241,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
+					4597FEE71846B82E000F8764 = {
+						DevelopmentTeam = V9WTTPBFK9;
+					};
 					4597FF081846B82E000F8764 = {
 						TestTargetID = 4597FEE71846B82E000F8764;
 					};
@@ -264,6 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4597FF2A1847461F000F8764 /* SBVEBarButtonItem.m in Sources */,
+				4597FF2E18474CD3000F8764 /* SBVEPopupView.m in Sources */,
 				4597FF231846B87A000F8764 /* SBVEButtonBarViewController.m in Sources */,
 				4597FF021846B82E000F8764 /* SBVEViewController.m in Sources */,
 				4597FEFC1846B82E000F8764 /* SBVEAppDelegate.m in Sources */,
@@ -395,10 +428,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlidingBetweenViewsExample/SlidingBetweenViewsExample-Prefix.pch";
 				INFOPLIST_FILE = "SlidingBetweenViewsExample/SlidingBetweenViewsExample-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -408,10 +444,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlidingBetweenViewsExample/SlidingBetweenViewsExample-Prefix.pch";
 				INFOPLIST_FILE = "SlidingBetweenViewsExample/SlidingBetweenViewsExample-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

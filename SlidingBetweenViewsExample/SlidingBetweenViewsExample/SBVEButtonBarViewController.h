@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SBVEButtonBarViewController : UIViewController
+#import "SBVEBarButtonItemDelegate.h"
 
-- (IBAction)buttonSelected:(id)sender;
-- (IBAction)buttonDeselected:(id)sender;
+@class SBVEBarButtonItem;
 
-@property (strong, nonatomic) IBOutlet UIButton *button1;
-@property (strong, nonatomic) IBOutlet UIButton *button2;
+@interface SBVEButtonBarViewController : UIViewController<SBVEBarButtonItemDelegate>
+
+@property (strong, nonatomic) IBOutlet SBVEBarButtonItem *button1;
+@property (strong, nonatomic) IBOutlet SBVEBarButtonItem *button2;
 
 - (void)setupLayoutConstraints;
 

@@ -17,7 +17,7 @@ static const NSString *kFacebookPageRegionID = @"FacebookPage";
 
 @property CLLocationManager *locationManager;
 @property(nonatomic, strong, readonly) NSUUID *facebookUUID;
-@property (nonatomic, strong) UILabel *statusLabel;
+@property (nonatomic, strong) UILabel *`;
 
 @end
 

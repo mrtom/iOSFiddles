@@ -8,6 +8,8 @@
 
 #import "SBVEPopupViewController.h"
 
+#import "SBVEPopupView.h"
+
 @interface SBVEPopupViewController () {
   NSLayoutConstraint *movableViewX;
   NSLayoutConstraint *movableViewY;
@@ -26,6 +28,11 @@
       // Custom initialization
   }
   return self;
+}
+
+- (void)loadView
+{
+  self.view = [[SBVEPopupView alloc] init];
 }
 
 - (void)viewDidLoad
@@ -76,7 +83,7 @@
                                                                     options:0
                                                                     metrics:nil
                                                                       views:viewsDict]];
-  [self.view.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[popupView(200)]-(30)-|"
+  [self.view.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[popupView(200)]-(40)-|"
                                                                     options:0
                                                                     metrics:nil
                                                                       views:viewsDict]];

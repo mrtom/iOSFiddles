@@ -9,6 +9,7 @@
 #import "SBVEButtonBarViewController.h"
 
 #import "SBVEPopupViewController.h"
+#import "SBVEBarButtonItem.h"
 
 @interface SBVEButtonBarViewController ()
 
@@ -33,6 +34,14 @@
   [self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
   
   _popup = [[SBVEPopupViewController alloc] init];
+  [_popup.view setAlpha:0.0f];
+  [self.view addSubview:_popup.view];
+  
+  [_button1 setDelegate:self];
+  [_button1 setPopupView:(SBVEPopupView *)_popup.view];
+  
+  [_button2 setDelegate:self];
+  [_button2 setPopupView:(SBVEPopupView *)_popup.view];
 }
 
 - (void)setupLayoutConstraints
@@ -54,41 +63,18 @@
   // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Handling Touches
 
-#pragma mark - IB Actions
-
-- (IBAction)buttonSelected:(id)sender
+- (void)showPopupWithTouches:(NSSet *)touches forEvent:(UIEvent *)event
 {
-  NSLog([NSString stringWithFormat:@"Button %ld down", (long)[sender tag]]);
-  
-  [(UIButton *)sender setBackgroundColor:[UIColor blueColor]];
-  [self.view addSubview:_popup.view];
+  // FIXME (tomelliott) Adding the popup to the view here breaks touches being sent to the popup view :/
+  [_popup.view setAlpha:1.0f];
   [_popup setupLayoutConstraints];
 }
 
-- (IBAction)buttonDeselected:(id)sender
+- (void)hidePopupWithTouches:(NSSet *)touches forEvent:(UIEvent *)event
 {
-  NSLog([NSString stringWithFormat:@"Button %ld up", (long)[sender tag]]);
-
-  [(UIButton *)sender setBackgroundColor:[UIColor grayColor]];
-  [_popup.view removeFromSuperview];
-}
-
-#pragma mark - Handling Touches
-
-- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
-{
-  NSLog(@"Touches began on the Button Bar VC");
-}
-
-- (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
-{
-  NSLog(@"Touches moved on the Button Bar VC");
-}
-
-- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
-{
-  NSLog(@"Touches ended on the Button Bar VC");
+  [_popup.view setAlpha:0.0f];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
