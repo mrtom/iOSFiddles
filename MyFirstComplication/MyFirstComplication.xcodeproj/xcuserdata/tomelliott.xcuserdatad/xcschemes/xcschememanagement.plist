@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Complication - MyFirstComplication WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>MyFirstComplication WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>MyFirstComplication.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>45D034061B384E350012326E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>45D0341F1B384E360012326E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>45D0342A1B384E360012326E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>45D034331B384E360012326E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

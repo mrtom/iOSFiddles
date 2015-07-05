@@ -99,7 +99,10 @@
 - (void)viewTouchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
   CGPoint pt = [[touches anyObject] locationInView: self.view];
-  _movableView.center = CGPointMake(pt.x, pt.y);
+  
+  if (CGRectContainsPoint(self.view.bounds, pt)) {
+    _movableView.center = CGPointMake(pt.x, pt.y);
+  }
 }
 
 
