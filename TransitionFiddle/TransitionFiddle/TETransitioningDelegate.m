@@ -35,12 +35,12 @@
 
 #pragma mark - Private instance methods
 
-- (void)_completeTransition {
+- (void)_completeTransitionFinished:(BOOL)finished {
   UIView * containerView = _currentTransitioningContext.containerView;
   CATransform3D sublayerTransform = CATransform3DIdentity;
   containerView.layer.sublayerTransform = sublayerTransform;
   
-  [_currentTransitioningContext completeTransition:YES];
+  [_currentTransitioningContext completeTransition:finished];
   _currentTransitioningContext = nil;
 }
 
@@ -90,41 +90,14 @@
   UIView * fromView = fromViewController.view;
   UIView * toView = toViewController.view;
   
-  UIView * wrapperView = [[UIView alloc] initWithFrame:fromView.frame];
-//  fromView.frame = fromView.bounds;
-//  toView.frame = toView.bounds;
-  wrapperView.frame = fromView.frame;
   toView.frame = fromView.frame;
   
-  
-  wrapperView.autoresizesSubviews = YES;
-  wrapperView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-  [wrapperView addSubview:fromView];
-  [wrapperView addSubview:toView];
-  [containerView addSubview:wrapperView];
-  
+ [containerView addSubview:fromView];
+ [containerView addSubview:toView];
 
   _transition.delegate = self;
-  [self _transitionInContainerView:wrapperView fromView:fromView toView:toView withTransition:_transition];
+  [self _transitionInContainerView:containerView fromView:fromView toView:toView withTransition:_transition];
 }
-
-#pragma mark - UIViewControllerInteractiveTransitioning
-
-- (void)startInteractiveTransition:(id<UIViewControllerContextTransitioning>)transitionContext
-{
-  _currentTransitioningContext = transitionContext;
-  
-  UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-  UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-  
-  UIView * containerView = transitionContext.containerView;
-  UIView * fromView = fromViewController.view;
-  UIView * toView = toViewController.view;
-  
-  // I think I need to add these views as properties so they can be referenced in the gesture handler below(?)
-}
-
-#pragma mark - UIViewControllerAnimatedTransitioning
 
 #pragma mark - UIPercentDrivenInteractiveTransition methods
 
@@ -133,14 +106,33 @@
   return _transition.duration;
 }
 
-#pragma mark - TETransitionDelegate
-
-- (void)pushTransitionDidFinish:(TETransition *)transition {
-  [self _completeTransition];
+- (void)finishInteractiveTransition
+{
+  [super finishInteractiveTransition];
+  [self _completeTransitionFinished:YES];
 }
 
-- (void)popTransitionDidFinish:(TETransition *)transition {
-  [self _completeTransition];
+- (void)cancelInteractiveTransition
+{
+  [super cancelInteractiveTransition];
+  [self _completeTransitionFinished:NO];
+}
+
+#pragma mark - TETransitionDelegate
+
+- (void)pushTransition:(TETransition *)transition didFinish:(BOOL)finished
+{
+  [self _completeTransitionFinished:finished];
+}
+
+- (void)popTransition:(TETransition *)transition didFinish:(BOOL)finished
+{
+  [self _completeTransitionFinished:finished];
+}
+
+- (void)interactiveTransition:(TETransition *)transition didFinish:(BOOL)finished
+{
+  [self _completeTransitionFinished:finished];
 }
 
 @end

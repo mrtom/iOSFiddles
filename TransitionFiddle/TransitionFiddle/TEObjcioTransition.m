@@ -28,7 +28,7 @@
     toView.alpha = 1;
   } completion:^(BOOL finished) {
     fromView.transform = CGAffineTransformIdentity;
-    [self.delegate pushTransitionDidFinish:self];    
+    [self.delegate pushTransition:self didFinish:finished];
   }];
 }
 

@@ -6,7 +6,7 @@
 //  Copyright © 2015 telliott. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @protocol TETransitionDelegate;
 
@@ -26,6 +26,7 @@ typedef NS_ENUM(NSUInteger, TETransitionType) {
 
 @protocol TETransitionDelegate
 @optional
-- (void)pushTransitionDidFinish:(TETransition *)transition;
-- (void)popTransitionDidFinish:(TETransition *)transition;
+- (void)pushTransition:(TETransition *)transition didFinish:(BOOL)finished;
+- (void)popTransition:(TETransition *)transition didFinish:(BOOL)finished;
+- (void)interactiveTransition:(TETransition *)transition didFinish:(BOOL)finished;
 @end

@@ -31,6 +31,8 @@
   }
 }
 
+#pragma mark - Private instance methods
+
 - (void)_performPushTransitionFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView withDuration:(NSTimeInterval)duration
 {
   // [containerView addSubview:toView];
@@ -48,23 +50,22 @@
   } completion:^(BOOL finished) {
     fromView.transform = CGAffineTransformIdentity;
     fromView.alpha = 1.0;
-    [self.delegate pushTransitionDidFinish:self];
+    [self.delegate pushTransition:self didFinish:finished];
   }];
 }
 
 - (void)_performPopTransitionFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView withDuration:(NSTimeInterval)duration
 {
 //  [containerView addSubview:toView];
-  
+  CGRect currentFromFrame = fromView.frame;
+  CGRect outOfWindowFrame = CGRectMake(CGRectGetMaxX(currentFromFrame), currentFromFrame.origin.y, currentFromFrame.size.width, currentFromFrame.size.height);
+
   CGAffineTransform scaleTransform = CGAffineTransformMakeScale(1.0, 1.0);
   CGAffineTransform moveTransform = CGAffineTransformMakeTranslation(15, 15);
   toView.transform = CGAffineTransformConcat(scaleTransform, moveTransform);
   toView.alpha = 0.3;
   
   [fromView.superview bringSubviewToFront:fromView];
-  
-  CGRect currentFromFrame = fromView.frame;
-  CGRect outOfWindowFrame = CGRectMake(CGRectGetMaxX(currentFromFrame), currentFromFrame.origin.y, currentFromFrame.size.width, currentFromFrame.size.height);
   
   [UIView animateWithDuration:duration animations:^{
     toView.transform = CGAffineTransformIdentity;
@@ -73,7 +74,8 @@
     fromView.frame = outOfWindowFrame;
   } completion:^(BOOL finished) {
     fromView.frame = currentFromFrame;
-    [self.delegate popTransitionDidFinish:self];
+    toView.transform = CGAffineTransformIdentity;
+    [self.delegate popTransition:self didFinish:finished];
   }];
 }
 
