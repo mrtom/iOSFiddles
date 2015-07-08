@@ -9,17 +9,15 @@
 #import "SimpleCollectionViewController.h"
 
 #import "TETransitioningDelegate.h"
-#import "TEObjcioTransition.h"
 #import "TECityMapperTransition.h"
 
 static NSUInteger const kNavBarHeight = 60;
 
-@interface SimpleCollectionViewController () {
-  id<UIViewControllerTransitioningDelegate> _strongRefToTransitioningDelegate;
-}
+@interface SimpleCollectionViewController ()
 
 @property (nonatomic, strong, readonly) UIView *navigationBarShadowView;
 @property (nonatomic, assign, readonly) NSUInteger index;
+@property (nonatomic, strong, readonly) id<UIViewControllerTransitioningDelegate> transitioningDelegateForChildVCs;
 
 @end
 
@@ -36,13 +34,11 @@ static NSUInteger const kNavBarHeight = 60;
     _isRootViewController = YES;
     _index = index;
     _navigationTitle = [NSString stringWithFormat:@"View #%lu", (unsigned long)_index];
+
+    TETransition *transition = [[TECityMapperTransition alloc] init];
+    _transitioningDelegateForChildVCs = [[TETransitioningDelegate alloc] initWithRootViewController:self transition:transition];
   }
   return self;
-}
-
-- (void)dealloc
-{
-  _strongRefToTransitioningDelegate = nil;
 }
 
 static NSString * const reuseIdentifier = @"Cell";
@@ -181,45 +177,12 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-  //ADTransition *transition = [[ADCubeTransition alloc] initWithDuration:0.5 orientation:ADTransitionRightToLeft sourceRect:self.view.frame];
-  TETransition *transition = [[TECityMapperTransition alloc] init];
-  TETransitioningDelegate * transitioningDelegate = [[TETransitioningDelegate alloc] initWithRootViewController:self transition:transition];
-
   SimpleCollectionViewController *nextVC = [[SimpleCollectionViewController alloc] initWithCollectionViewLayout:self.collectionViewLayout index:_index+1];
   nextVC.isRootViewController = NO;
-  nextVC.transitioningDelegate = transitioningDelegate;
+  nextVC.transitioningDelegate = _transitioningDelegateForChildVCs;
 
   [self.navigationController pushViewController:nextVC animated:YES];
 }
-
-/*
- // Uncomment this method to specify if the specified item should be highlighted during tracking
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
- }
- */
-
-/*
- // Uncomment this method to specify if the specified item should be selected
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
- return YES;
- }
- */
-
-/*
- // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
- - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
- }
- 
- - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
- }
- 
- - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
- }
- */
 
 #pragma mark - UIScrollViewDelegate
 
@@ -233,14 +196,6 @@ static NSString * const reuseIdentifier = @"Cell";
 - (NSString *)debugDescription
 {
   return [NSString stringWithFormat:@"%@: %@", _navigationTitle, [super debugDescription]];
-}
-
-- (void)setTransitioningDelegate:(id<UIViewControllerTransitioningDelegate>)transitioningDelegate
-{
-  // This is a weak property, but we don't want it to disappear. So save it in an instance variable
-  // FIXME: WTF?
-  _strongRefToTransitioningDelegate = transitioningDelegate;
-  [super setTransitioningDelegate:transitioningDelegate];
 }
 
 @end

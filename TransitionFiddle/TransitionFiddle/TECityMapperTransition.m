@@ -35,8 +35,6 @@
 
 - (void)_performPushTransitionFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView withDuration:(NSTimeInterval)duration
 {
-  // [containerView addSubview:toView];
-  
   CGRect currentFrame = toView.frame;
   toView.frame = CGRectMake(currentFrame.origin.x + currentFrame.size.width, currentFrame.origin.y, currentFrame.size.width, currentFrame.size.height);
   
@@ -56,7 +54,6 @@
 
 - (void)_performPopTransitionFromView:(UIView *)fromView toView:(UIView *)toView inContainerView:(UIView *)containerView withDuration:(NSTimeInterval)duration
 {
-//  [containerView addSubview:toView];
   CGRect currentFromFrame = fromView.frame;
   CGRect outOfWindowFrame = CGRectMake(CGRectGetMaxX(currentFromFrame), currentFromFrame.origin.y, currentFromFrame.size.width, currentFromFrame.size.height);
 

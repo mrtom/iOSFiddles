@@ -15,7 +15,6 @@
 		459B5AA41B4475A3007668AB /* TETransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B5AA31B4475A3007668AB /* TETransitioningDelegate.m */; };
 		459B5AA71B4475E0007668AB /* TETransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B5AA61B4475E0007668AB /* TETransition.m */; };
 		459B5AAA1B449886007668AB /* TESimpleAnimationTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B5AA91B449886007668AB /* TESimpleAnimationTransition.m */; };
-		459B5AAD1B450EE6007668AB /* TEObjcioTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 459B5AAC1B450EE6007668AB /* TEObjcioTransition.m */; };
 		45CFE9D41B426C70009F7623 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CFE9D31B426C70009F7623 /* main.m */; };
 		45CFE9D71B426C70009F7623 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CFE9D61B426C70009F7623 /* AppDelegate.m */; };
 		45CFE9DA1B426C70009F7623 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CFE9D91B426C70009F7623 /* ViewController.m */; };
@@ -70,8 +69,6 @@
 		459B5AA61B4475E0007668AB /* TETransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TETransition.m; sourceTree = "<group>"; };
 		459B5AA81B449886007668AB /* TESimpleAnimationTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TESimpleAnimationTransition.h; sourceTree = "<group>"; };
 		459B5AA91B449886007668AB /* TESimpleAnimationTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESimpleAnimationTransition.m; sourceTree = "<group>"; };
-		459B5AAB1B450EE6007668AB /* TEObjcioTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEObjcioTransition.h; sourceTree = "<group>"; };
-		459B5AAC1B450EE6007668AB /* TEObjcioTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEObjcioTransition.m; sourceTree = "<group>"; };
 		45CFE9CF1B426C70009F7623 /* TransitionFiddle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitionFiddle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CFE9D31B426C70009F7623 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45CFE9D51B426C70009F7623 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -145,8 +142,6 @@
 				459B5AA61B4475E0007668AB /* TETransition.m */,
 				459B5AA81B449886007668AB /* TESimpleAnimationTransition.h */,
 				459B5AA91B449886007668AB /* TESimpleAnimationTransition.m */,
-				459B5AAB1B450EE6007668AB /* TEObjcioTransition.h */,
-				459B5AAC1B450EE6007668AB /* TEObjcioTransition.m */,
 				455CCF371B471E3E001F2A95 /* TECityMapperTransition.h */,
 				455CCF381B471E3E001F2A95 /* TECityMapperTransition.m */,
 			);
@@ -390,7 +385,6 @@
 				45CFEA3E1B42BA80009F7623 /* ADCubeTransition.m in Sources */,
 				4553AF161B42BDA8003F88F6 /* ADTransformTransition.m in Sources */,
 				459B5AA71B4475E0007668AB /* TETransition.m in Sources */,
-				459B5AAD1B450EE6007668AB /* TEObjcioTransition.m in Sources */,
 				45CFEA531B42BA80009F7623 /* UIViewController+ADTransitionController.m in Sources */,
 				4553AF131B42BD91003F88F6 /* ADDualTransition.m in Sources */,
 				455CCF391B471E3E001F2A95 /* TECityMapperTransition.m in Sources */,

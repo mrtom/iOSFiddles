@@ -13,7 +13,7 @@
 @interface TETransitioningDelegate : UIPercentDrivenInteractiveTransition  <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, UIViewControllerInteractiveTransitioning, TETransitionDelegate>
 
 @property (nonatomic, strong, readonly) UIViewController *rootViewController;
-@property (nonatomic, strong) TETransition * transition;
+@property (nonatomic, strong) TETransition *transition;
 
 - (id)initWithRootViewController:(UIViewController *)viewController transition:(TETransition *)transition;
 

@@ -7,6 +7,7 @@
 //
 
 #import "TETransitioningDelegate.h"
+
 #import "TESimpleAnimationTransition.h"
 
 @interface TETransitioningDelegate() {
@@ -36,10 +37,6 @@
 #pragma mark - Private instance methods
 
 - (void)_completeTransitionFinished:(BOOL)finished {
-  UIView * containerView = _currentTransitioningContext.containerView;
-  CATransform3D sublayerTransform = CATransform3DIdentity;
-  containerView.layer.sublayerTransform = sublayerTransform;
-  
   [_currentTransitioningContext completeTransition:finished];
   _currentTransitioningContext = nil;
 }

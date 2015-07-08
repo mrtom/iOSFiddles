@@ -29,4 +29,5 @@ typedef NS_ENUM(NSUInteger, TETransitionType) {
 - (void)pushTransition:(TETransition *)transition didFinish:(BOOL)finished;
 - (void)popTransition:(TETransition *)transition didFinish:(BOOL)finished;
 - (void)interactiveTransition:(TETransition *)transition didFinish:(BOOL)finished;
+
 @end
